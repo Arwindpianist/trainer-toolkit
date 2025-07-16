@@ -22,14 +22,12 @@ export default function Header({ title, subtitle, showBack = true }: HeaderProps
                 <ArrowLeft className="h-5 w-5" />
               </Link>
             )}
-            <div className="flex items-center space-x-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-teal-400 to-blue-400 shadow-lg">
-                <Sparkles className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <div>
-                <h1 className="text-lg sm:text-xl font-bold text-foreground">{title}</h1>
+            <div className="flex items-center gap-3">
+              <img src="/favicon.svg" alt="Trainer Toolkit Logo" className="h-10 w-10" />
+              <div className="flex flex-col">
+                <span className="text-lg sm:text-xl font-bold text-foreground leading-tight">{title}</span>
                 {subtitle && (
-                  <p className="text-xs sm:text-sm text-muted-foreground">{subtitle}</p>
+                  <span className="text-xs sm:text-sm text-muted-foreground leading-tight">{subtitle}</span>
                 )}
               </div>
             </div>

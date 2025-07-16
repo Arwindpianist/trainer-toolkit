@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { RotateCcw, Plus, Trash2, Save, Users, Shuffle } from 'lucide-react';
+import { RotateCcw, Plus, Trash2, Save, Shuffle } from 'lucide-react';
 import Header from '@/components/Header';
 import { useTrainerToolkitStore, PickerList } from '@/lib/store';
 
@@ -14,7 +14,6 @@ export default function RandomPicker() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState<string | null>(null);
   const [showCreateList, setShowCreateList] = useState(false);
-  const [pickCount, setPickCount] = useState(1);
   const [removeAfterPick, setRemoveAfterPick] = useState(false);
 
   const { pickerLists, addPickerList, updatePickerList, deletePickerList } = useTrainerToolkitStore();

@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Host
+Host: https://trainer-toolkit.arwindpianist.store
+
+# Sitemaps
+Sitemap: https://trainer-toolkit.arwindpianist.store/sitemap.xml

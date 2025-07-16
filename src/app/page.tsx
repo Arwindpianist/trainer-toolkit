@@ -71,13 +71,11 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-teal-400 to-blue-400 shadow-lg">
-                <Sparkles className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="text-xl font-bold text-foreground">Trainer Toolkit</h1>
-                <p className="text-xs text-muted-foreground">by Arwindpianist Multimedia & Consulting</p>
+            <div className="flex items-center gap-3">
+              <img src="/favicon.svg" alt="Trainer Toolkit Logo" className="h-10 w-10" />
+              <div className="hidden sm:flex flex-col">
+                <span className="text-xl font-bold text-foreground leading-tight">Trainer Toolkit</span>
+                <span className="text-xs text-muted-foreground leading-tight">by Arwindpianist Multimedia & Consulting</span>
               </div>
             </div>
             
@@ -213,11 +211,12 @@ export default function Home() {
       <footer className="border-t border-border/40 bg-muted/20 mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-teal-400 to-blue-400">
-                <Sparkles className="h-4 w-4 text-primary-foreground" />
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <img src="/favicon.svg" alt="Trainer Toolkit Logo" className="h-8 w-8" />
+              <div className="flex flex-col items-start">
+                <span className="text-lg font-semibold text-foreground leading-tight">Trainer Toolkit</span>
+                <span className="text-xs text-muted-foreground leading-tight">by Arwindpianist Multimedia & Consulting</span>
               </div>
-              <span className="text-lg font-semibold text-foreground">Trainer Toolkit</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Essential tools for modern presenters and trainers

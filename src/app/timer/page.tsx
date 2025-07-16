@@ -3,7 +3,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw, Maximize2, Minimize2, Plus, Trash2 } from 'lucide-react';
 import Header from '@/components/Header';
-import { useTrainerToolkitStore, TimerPreset } from '@/lib/store';
+import { useTrainerToolkitStore } from '@/lib/store';
+
+
 
 export default function Timer() {
   const [timeLeft, setTimeLeft] = useState(0);

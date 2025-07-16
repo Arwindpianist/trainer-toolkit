@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Save, Plus, Trash2, Maximize2, Minimize2, FileText } from 'lucide-react';
 import Header from '@/components/Header';
 import { useTrainerToolkitStore, Note } from '@/lib/store';
@@ -31,7 +31,7 @@ export default function NoteBoard() {
     }
   }, [currentNote]);
 
-  const handleAutoSave = () => {
+  const handleAutoSave = useCallback(() => {
     if (autoSaveTimeoutRef.current) {
       clearTimeout(autoSaveTimeoutRef.current);
     }
@@ -41,7 +41,7 @@ export default function NoteBoard() {
         updateNote(currentNote.id, { title, content });
       }
     }, 1000);
-  };
+  }, [currentNote, title, content, updateNote]);
 
   useEffect(() => {
     if (currentNote) {
@@ -53,7 +53,7 @@ export default function NoteBoard() {
         clearTimeout(autoSaveTimeoutRef.current);
       }
     };
-  }, [title, content, currentNote]);
+  }, [title, content, currentNote, handleAutoSave]);
 
   const handleCreateNote = () => {
     if (title.trim() || content.trim()) {
