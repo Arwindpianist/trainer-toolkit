@@ -1,0 +1,47 @@
+import Link from 'next/link';
+import { ArrowLeft, Sparkles } from 'lucide-react';
+
+interface HeaderProps {
+  title: string;
+  subtitle?: string;
+  showBack?: boolean;
+}
+
+export default function Header({ title, subtitle, showBack = true }: HeaderProps) {
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center space-x-4">
+            {showBack && (
+              <Link
+                href="/"
+                className="flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                title="Back to Dashboard"
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </Link>
+            )}
+            <div className="flex items-center space-x-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-teal-400 to-blue-400 shadow-lg">
+                <Sparkles className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <div>
+                <h1 className="text-lg sm:text-xl font-bold text-foreground">{title}</h1>
+                {subtitle && (
+                  <p className="text-xs sm:text-sm text-muted-foreground">{subtitle}</p>
+                )}
+              </div>
+            </div>
+          </div>
+          <Link
+            href="/"
+            className="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-primary hover:text-primary/80 hover:bg-primary/10 rounded-lg transition-colors"
+          >
+            Trainer Toolkit
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+} 

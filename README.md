@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TrainerToolkit 🎯
 
-## Getting Started
+A lightweight, modern web application built with Next.js App Router and TypeScript, providing essential tools for presenters, trainers, and facilitators.
 
-First, run the development server:
+## ✨ Features
 
+### 🎯 QR Code Generator
+- Create QR codes for URLs, text, vCard contacts, and WiFi credentials
+- Save generated codes with names and timestamps
+- Download as PNG images
+- Share via unique URLs (e.g., `/qr/abc123`)
+- Persistent storage with localStorage
+
+### ⏲️ Countdown Timer
+- Set custom timers (5/10/15/30 minutes or manual input)
+- Fullscreen display for projection
+- Visual and audio alerts on time-up
+- Save frequently used presets locally
+- Pause, resume, and reset functionality
+
+### 🎡 Random Picker / Spinner
+- Input lists of names or items
+- Spin to pick 1+ winners randomly
+- Option to remove picked names after selection
+- Fullscreen spinner mode
+- Manage multiple lists
+
+### 📝 Note Board / Slide Helper
+- Add simple Markdown or bullet notes
+- Auto-save functionality
+- Fullscreen mode for displaying during sessions
+- Search and organize notes
+- Real-time preview with Markdown rendering
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd trainer-toolkit
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **State Management**: Zustand with persistence
+- **Icons**: Lucide React
+- **QR Codes**: qrcode.react
+- **Deployment**: Vercel (recommended)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+trainer-toolkit/
+├── src/
+│   ├── app/                 # Next.js App Router pages
+│   │   ├── page.tsx         # Dashboard
+│   │   ├── qr/              # QR Code Generator
+│   │   ├── timer/           # Countdown Timer
+│   │   ├── picker/          # Random Picker
+│   │   └── notes/           # Note Board
+│   ├── components/          # Reusable components
+│   │   └── Header.tsx       # Shared header component
+│   └── lib/                 # Utilities and stores
+│       └── store.ts         # Zustand store with persistence
+├── public/                  # Static assets
+└── package.json
+```
 
-## Deploy on Vercel
+## 🎨 Design Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Modern UI**: Clean, distraction-free interface inspired by v0, Cursor, and ChatGPT
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+- **Offline-First**: All tools work without internet connection
+- **Data Persistence**: Automatic localStorage saving across sessions
+- **Fullscreen Support**: Perfect for presentations and projections
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## 🌟 Key Benefits
+
+### For Trainers & Presenters
+- **Lightning Fast**: Instant tool access with no loading delays
+- **Works Offline**: All tools function without internet connection
+- **Data Persistence**: Your data is saved locally and persists across sessions
+- **Professional**: Clean, modern interface perfect for presentations
+
+### For Workshop Facilitators
+- **QR Code Sharing**: Quickly share resources, links, and contact information
+- **Time Management**: Keep sessions on track with custom timers
+- **Engagement**: Random picker for interactive activities
+- **Notes**: Display key points and session materials
+
+## 🔮 Future Features
+
+- [ ] Audience polling tool with real-time feedback
+- [ ] Custom QR styling and themes
+- [ ] Export notes or poll results to PDF/CSV
+- [ ] Session tagging and history view
+- [ ] Supabase integration for cloud sync
+- [ ] Authentication with magic link login
+- [ ] Collaborative features
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Icons from [Lucide](https://lucide.dev/)
+- QR Code generation with [qrcode.react](https://github.com/zpao/qrcode.react)
+
+---
+
+**TrainerToolkit** - Essential tools for modern presenters and trainers. 🎯

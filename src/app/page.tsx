@@ -1,102 +1,234 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { QrCode, Timer, Users, FileText, Sparkles, ArrowRight, Zap, Shield, Heart } from 'lucide-react';
+
+const tools = [
+  {
+    name: 'QR Code Generator',
+    description: 'Create QR codes for URLs, text, contacts, and WiFi networks instantly',
+    icon: QrCode,
+    href: '/qr',
+    color: 'from-blue-500 to-blue-600',
+    bgColor: 'bg-blue-50',
+    iconColor: 'text-blue-600'
+  },
+  {
+    name: 'Countdown Timer',
+    description: 'Set custom timers with fullscreen display for presentations',
+    icon: Timer,
+    href: '/timer',
+    color: 'from-green-500 to-green-600',
+    bgColor: 'bg-green-50',
+    iconColor: 'text-green-600'
+  },
+  {
+    name: 'Random Picker',
+    description: 'Spin to randomly select names or items from your list',
+    icon: Users,
+    href: '/picker',
+    color: 'from-purple-500 to-purple-600',
+    bgColor: 'bg-purple-50',
+    iconColor: 'text-purple-600'
+  },
+  {
+    name: 'Note Board',
+    description: 'Create and display notes with Markdown support',
+    icon: FileText,
+    href: '/notes',
+    color: 'from-orange-500 to-orange-600',
+    bgColor: 'bg-orange-50',
+    iconColor: 'text-orange-600'
+  }
+];
+
+const features = [
+  {
+    icon: Zap,
+    title: 'Lightning Fast',
+    description: 'Instant tool access with no loading delays',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-50'
+  },
+  {
+    icon: Shield,
+    title: 'Works Offline',
+    description: 'All tools function without internet connection',
+    color: 'text-green-600',
+    bgColor: 'bg-green-50'
+  },
+  {
+    icon: Heart,
+    title: 'Data Persistence',
+    description: 'Your data is saved locally and persists across sessions',
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-50'
+  }
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-teal-400 to-blue-400 shadow-lg">
+                <Sparkles className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <div className="hidden sm:block">
+                <h1 className="text-xl font-bold text-foreground">Trainer Toolkit</h1>
+                <p className="text-xs text-muted-foreground">by Arwindpianist Multimedia & Consulting</p>
+              </div>
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="flex items-center space-x-4">
+              <div className="sm:hidden">
+                <h1 className="text-lg font-bold text-foreground">Trainer Toolkit</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Main Content */}
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        {/* Hero Section */}
+        <div className="text-center mb-12 lg:mb-16 animate-fade-in">
+          <div className="mx-auto max-w-4xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Your Complete
+              <span className="block bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
+                Presentation Toolkit
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Everything you need for engaging presentations, workshops, and training sessions. 
+              All tools work offline and save your data locally.
+            </p>
+          </div>
+        </div>
+
+        {/* Tools Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 lg:mb-20">
+          {tools.map((tool, index) => {
+            const IconComponent = tool.icon;
+            return (
+              <Link
+                key={tool.name}
+                href={tool.href}
+                className="group relative overflow-hidden rounded-2xl bg-card border border-border/50 p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="relative z-10">
+                  <div className={`inline-flex p-3 rounded-xl ${tool.bgColor} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className={`h-6 w-6 ${tool.iconColor}`} />
+                  </div>
+                  
+                  <h3 className="text-lg font-semibold text-card-foreground mb-2 group-hover:text-primary transition-colors">
+                    {tool.name}
+                  </h3>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {tool.description}
+                  </p>
+                  
+                  <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform duration-300">
+                    Get started
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Features Section */}
+        <div className="bg-card rounded-3xl border border-border/50 p-8 sm:p-12 shadow-sm">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-card-foreground mb-4">
+              Why TrainerToolkit?
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Built with modern web technologies and designed for the best user experience
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <div 
+                  key={feature.title}
+                  className="text-center group animate-fade-in"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className={`w-8 h-8 ${feature.color}`} />
+                  </div>
+                  <h3 className="font-semibold text-card-foreground mb-3 text-lg">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 lg:mt-20 text-center">
+          <div className="bg-gradient-to-r from-teal-400/10 to-blue-400/5 rounded-3xl p-8 sm:p-12 border border-teal-400/20">
+            <h2 className="text-2xl sm:text-3xl font-bold text-card-foreground mb-4">
+              Ready to enhance your presentations?
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Start using TrainerToolkit today and experience the difference in your training sessions
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/qr"
+                className="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25"
+              >
+                <QrCode className="mr-2 h-5 w-5" />
+                Try QR Generator
+              </Link>
+              <Link
+                href="/timer"
+                className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-secondary-foreground font-medium rounded-xl hover:bg-secondary/80 transition-colors border border-border"
+              >
+                <Timer className="mr-2 h-5 w-5" />
+                Start Timer
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="border-t border-border/40 bg-muted/20 mt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-teal-400 to-blue-400">
+                <Sparkles className="h-4 w-4 text-primary-foreground" />
+              </div>
+              <span className="text-lg font-semibold text-foreground">Trainer Toolkit</span>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              Essential tools for modern presenters and trainers
+            </p>
+            <p className="text-muted-foreground text-xs mt-2">
+              <a href="https://www.arwindpianist.store/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                arwindpianist.store
+              </a>
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
