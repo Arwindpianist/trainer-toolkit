@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     siteName: "Trainer Toolkit",
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Trainer Toolkit - Essential Tools for Presenters',
+        url: '/favicon.svg',
+        width: 500,
+        height: 500,
+        alt: 'Trainer Toolkit Logo - Essential Tools for Presenters',
       },
     ],
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Trainer Toolkit by Arwindpianist Multimedia & Consulting",
     description: "Essential tools for modern trainers and presenters. QR codes, timers, random pickers, and note boards.",
     creator: "@arwindpianist",
-    images: ['/og-image.png'],
+    images: ['/favicon.svg'],
   },
   robots: {
     index: true,
