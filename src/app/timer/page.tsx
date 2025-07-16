@@ -126,7 +126,7 @@ export default function Timer() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+    <div className="min-h-screen">
       <Header 
         title="Countdown Timer" 
         subtitle="Set custom timers with fullscreen display for presentations"
@@ -135,7 +135,7 @@ export default function Timer() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                     {/* Timer Display */}
-          <div id="timer-display" className="bg-card rounded-2xl border border-border/50 p-6 sm:p-8 shadow-sm">
+          <div id="timer-display" className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
             <div className="text-center">
                 <div className="mb-8">
                   <div className={`text-6xl sm:text-7xl lg:text-8xl font-bold ${getTimeColor()} transition-colors leading-none`}>
@@ -199,7 +199,7 @@ export default function Timer() {
           {/* Presets and Custom Timer */}
           <div className="space-y-6">
             {/* Quick Presets */}
-            <div className="bg-card rounded-2xl border border-border/50 p-6 shadow-sm">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
               <h2 className="text-xl font-semibold text-card-foreground mb-4">Quick Presets</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {timerPresets.map((preset) => (
@@ -216,7 +216,7 @@ export default function Timer() {
             </div>
 
             {/* Custom Timer */}
-            <div className="bg-card rounded-2xl border border-border/50 p-6 shadow-sm">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
               <h2 className="text-xl font-semibold text-card-foreground mb-4">Custom Timer</h2>
               
               {!showCustomInput ? (
@@ -276,7 +276,7 @@ export default function Timer() {
             </div>
 
             {/* Add Custom Preset */}
-            <div className="bg-card rounded-2xl border border-border/50 p-6 shadow-sm">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-semibold text-card-foreground">Custom Presets</h2>
                 <button

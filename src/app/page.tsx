@@ -66,9 +66,9 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+    <div className="min-h-screen">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b border-gray-300 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-3">
@@ -115,7 +115,7 @@ export default function Home() {
               <Link
                 key={tool.name}
                 href={tool.href}
-                className="group relative overflow-hidden rounded-2xl bg-card border border-border/50 p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+                className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 p-6 hover:shadow-lg hover:shadow-gray-200/50 transition-all duration-300 hover:-translate-y-1 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -144,7 +144,7 @@ export default function Home() {
         </div>
 
         {/* Features Section */}
-        <div className="bg-card rounded-3xl border border-border/50 p-8 sm:p-12 shadow-sm">
+        <div className="bg-white rounded-3xl border border-gray-200 p-8 sm:p-12 shadow-sm">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-card-foreground mb-4">
               Why TrainerToolkit?
@@ -180,7 +180,7 @@ export default function Home() {
 
         {/* CTA Section */}
         <div className="mt-16 lg:mt-20 text-center">
-          <div className="bg-gradient-to-r from-teal-400/10 to-blue-400/5 rounded-3xl p-8 sm:p-12 border border-teal-400/20">
+          <div className="bg-white/90 rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-sm">
             <h2 className="text-2xl sm:text-3xl font-bold text-card-foreground mb-4">
               Ready to enhance your presentations?
             </h2>
@@ -208,7 +208,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border/40 bg-muted/20 mt-20">
+      <footer className="border-t border-gray-300 bg-white/80 mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-4">

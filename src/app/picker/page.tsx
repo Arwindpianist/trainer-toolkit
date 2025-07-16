@@ -123,7 +123,7 @@ export default function RandomPicker() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+    <div className="min-h-screen">
       <Header 
         title="Random Picker" 
         subtitle="Spin to randomly select names or items from your list"
@@ -132,7 +132,7 @@ export default function RandomPicker() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Spinner Section */}
-          <div className="bg-card rounded-2xl border border-border/50 p-6 sm:p-8 shadow-sm">
+          <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-card-foreground mb-6 text-center">Random Picker</h2>
             
             {/* Winner Display */}

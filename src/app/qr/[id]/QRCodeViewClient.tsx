@@ -86,7 +86,7 @@ export default function QRCodeViewClient({ id }: QRCodeViewClientProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <header className="bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm border-b border-gray-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">

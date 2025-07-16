@@ -272,7 +272,7 @@ END:VCARD`;
   const currentQRContent = generateQRContent();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+    <div className="min-h-screen">
       <Header 
         title="QR Code Generator" 
         subtitle="Create and share QR codes for URLs, text, contacts, and WiFi"
@@ -293,7 +293,7 @@ END:VCARD`;
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Input Section */}
-          <div className="bg-card rounded-2xl border border-border/50 p-6 sm:p-8 shadow-sm">
+          <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
             <h2 className="text-xl font-semibold text-card-foreground mb-6 flex items-center">
               <QrCode className="h-5 w-5 mr-2 text-primary" />
               Generate QR Code
@@ -378,7 +378,7 @@ END:VCARD`;
           </div>
 
           {/* QR Preview */}
-          <div id="qr-preview" className="bg-card rounded-2xl border border-border/50 p-6 sm:p-8 shadow-sm">
+          <div id="qr-preview" className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-semibold text-card-foreground">Live Preview</h2>
               {currentQRContent.trim() && (
@@ -433,7 +433,7 @@ END:VCARD`;
 
         {/* Saved QR Codes */}
         {qrCodes.length > 0 && (
-          <div className="mt-12 bg-card rounded-2xl border border-border/50 p-6 sm:p-8 shadow-sm">
+          <div className="mt-12 bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
             <h2 className="text-xl font-semibold text-card-foreground mb-6">Saved QR Codes</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {qrCodes.map((qrCode) => (
